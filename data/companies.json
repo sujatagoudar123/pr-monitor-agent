@@ -1,0 +1,1253 @@
+{
+  "GSK": {
+    "name": "GSK",
+    "keywords": [
+      "GSK",
+      "GlaxoSmithKline",
+      "Pharma",
+      "Drug price",
+      "Shingles",
+      "SHINGRIX",
+      "Meningitis",
+      "Meningococcal",
+      "Bexsero",
+      "RSV",
+      "respiratory syncytial virus",
+      "Arexvy",
+      "Hepatitis",
+      "Influenza",
+      "Flu",
+      "Vaccine",
+      "Covid",
+      "MMR",
+      "Measles",
+      "Pertussis",
+      "Whooping Cough",
+      "Malaria",
+      "herpes zoster",
+      "Ask2BSure"
+    ],
+    "feeds": [
+      {
+        "name": "ABC News",
+        "url": "https://abcnews.go.com/abcnews/topstories"
+      },
+      {
+        "name": "BBC",
+        "url": "https://feeds.bbci.co.uk/news/rss.xml"
+      },
+      {
+        "name": "BBC Health",
+        "url": "https://feeds.bbci.co.uk/news/health/rss.xml"
+      },
+      {
+        "name": "BBC Business",
+        "url": "https://feeds.bbci.co.uk/news/business/rss.xml"
+      },
+      {
+        "name": "CBS News",
+        "url": "https://www.cbsnews.com/latest/rss/main"
+      },
+      {
+        "name": "CBS Health",
+        "url": "https://www.cbsnews.com/latest/rss/health"
+      },
+      {
+        "name": "Channel 4 News",
+        "url": "https://www.channel4.com/news/feed"
+      },
+      {
+        "name": "CNBC",
+        "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html"
+      },
+      {
+        "name": "CNBC Health",
+        "url": "https://www.cnbc.com/id/10000108/device/rss/rss.html"
+      },
+      {
+        "name": "CNN",
+        "url": "http://rss.cnn.com/rss/cnn_topstories.rss"
+      },
+      {
+        "name": "CNN Health",
+        "url": "http://rss.cnn.com/rss/cnn_health.rss"
+      },
+      {
+        "name": "Evening Standard",
+        "url": "https://www.standard.co.uk/rss"
+      },
+      {
+        "name": "City AM",
+        "url": "https://www.cityam.com/feed/all"
+      },
+      {
+        "name": "Fierce Healthcare",
+        "url": "https://www.fiercehealthcare.com/rss/headlines.xml"
+      },
+      {
+        "name": "FierceBiotech",
+        "url": "https://www.fiercebiotech.com/rss/headlines.xml"
+      },
+      {
+        "name": "FiercePharma",
+        "url": "https://www.fiercepharma.com/rss/headlines.xml"
+      },
+      {
+        "name": "Forbes",
+        "url": "https://www.forbes.com/innovation/feed2/"
+      },
+      {
+        "name": "Forbes Business",
+        "url": "https://www.forbes.com/business/feed/"
+      },
+      {
+        "name": "FOX News",
+        "url": "https://moxie.foxnews.com/google-publisher/latest.xml"
+      },
+      {
+        "name": "FOX News Health",
+        "url": "https://moxie.foxnews.com/google-publisher/health.xml"
+      },
+      {
+        "name": "ITV News",
+        "url": "https://www.itv.com/news/rss"
+      },
+      {
+        "name": "NBC News",
+        "url": "https://feeds.nbcnews.com/nbcnews/public/news"
+      },
+      {
+        "name": "NBC Health",
+        "url": "https://feeds.nbcnews.com/nbcnews/public/health"
+      },
+      {
+        "name": "NPR",
+        "url": "https://feeds.npr.org/1001/rss.xml"
+      },
+      {
+        "name": "NPR Health",
+        "url": "https://feeds.npr.org/1128/rss.xml"
+      },
+      {
+        "name": "Reuters",
+        "url": "https://feeds.reuters.com/reuters/topNews"
+      },
+      {
+        "name": "Reuters Health",
+        "url": "https://feeds.reuters.com/reuters/healthNews"
+      },
+      {
+        "name": "Sky News",
+        "url": "https://feeds.skynews.com/feeds/rss/home.xml"
+      },
+      {
+        "name": "Associated Press",
+        "url": "https://news.google.com/rss/search?q=%22Associated+Press%22+%28AP%29&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "The Daily Mail",
+        "url": "https://www.dailymail.co.uk/articles.rss"
+      },
+      {
+        "name": "The Daily Star",
+        "url": "https://www.dailystar.co.uk/news/rss.xml"
+      },
+      {
+        "name": "The Express",
+        "url": "https://www.express.co.uk/posts/rss/1/news"
+      },
+      {
+        "name": "The Guardian",
+        "url": "https://www.theguardian.com/uk/rss"
+      },
+      {
+        "name": "The Guardian Business",
+        "url": "https://www.theguardian.com/uk/business/rss"
+      },
+      {
+        "name": "The Hill",
+        "url": "https://thehill.com/rss/syndicator/19110"
+      },
+      {
+        "name": "The Independent",
+        "url": "https://www.independent.co.uk/rss"
+      },
+      {
+        "name": "The Lancet",
+        "url": "https://www.thelancet.com/rssfeed/lancet_online.xml"
+      },
+      {
+        "name": "The Metro",
+        "url": "https://metro.co.uk/news/feed/"
+      },
+      {
+        "name": "The Mirror",
+        "url": "https://www.mirror.co.uk/?service=rss"
+      },
+      {
+        "name": "The Sun",
+        "url": "https://www.thesun.co.uk/news/feed/"
+      },
+      {
+        "name": "British Medical Journal (BMJ)",
+        "url": "https://www.bmj.com/rss/topstories.xml"
+      },
+      {
+        "name": "U.S. News & World Report",
+        "url": "https://www.usnews.com/rss/articles"
+      },
+      {
+        "name": "USA Today",
+        "url": "https://www.usatoday.com/rss/news/"
+      },
+      {
+        "name": "Yahoo! News",
+        "url": "https://news.yahoo.com/rss/"
+      }
+    ]
+  },
+  "Mazda": {
+    "name": "Mazda",
+    "keywords": [
+      "Mazda",
+      "CX-30",
+      "CX-50",
+      "CX-90",
+      "CX-5",
+      "CX-9",
+      "CX-70",
+      "Mazda3",
+      "Mazda 3",
+      "MX-5 Miata",
+      "Mazda Toyota Manufacturing"
+    ],
+    "feeds": [
+      {
+        "name": "95octane",
+        "url": "https://95octane.com/feed/"
+      },
+      {
+        "name": "Ars Technica",
+        "url": "https://feeds.arstechnica.com/arstechnica/index"
+      },
+      {
+        "name": "Associated Press",
+        "url": "https://news.google.com/rss/search?q=%22Associated+Press%22+%28AP%29&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "Autoblog",
+        "url": "https://www.autoblog.com/rss.xml"
+      },
+      {
+        "name": "Automobile Magazine",
+        "url": "https://www.motortrend.com/feed/?s=automobile-magazine"
+      },
+      {
+        "name": "Automoblog",
+        "url": "https://www.automoblog.net/feed/"
+      },
+      {
+        "name": "Autoweek",
+        "url": "https://www.autoweek.com/rss/all.xml/"
+      },
+      {
+        "name": "Business Insider",
+        "url": "https://www.businessinsider.com/rss"
+      },
+      {
+        "name": "Car and Driver",
+        "url": "https://www.caranddriver.com/rss/all.xml/"
+      },
+      {
+        "name": "Cars.com",
+        "url": "https://www.cars.com/articles/rss/"
+      },
+      {
+        "name": "Carscoops.com",
+        "url": "https://www.carscoops.com/feed/"
+      },
+      {
+        "name": "Chicago Sun-Times",
+        "url": "https://chicago.suntimes.com/rss/index.xml"
+      },
+      {
+        "name": "Chicago Tribune",
+        "url": "https://www.chicagotribune.com/arc/outboundfeeds/rss/?outputType=xml"
+      },
+      {
+        "name": "CNBC",
+        "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html"
+      },
+      {
+        "name": "CNET",
+        "url": "https://www.cnet.com/rss/news/"
+      },
+      {
+        "name": "Consumer Guide",
+        "url": "https://blog.consumerguide.com/feed/"
+      },
+      {
+        "name": "Denver Post",
+        "url": "https://www.denverpost.com/feed/"
+      },
+      {
+        "name": "Detroit Free Press",
+        "url": "https://rssfeeds.freep.com/freep-NewsTopStories"
+      },
+      {
+        "name": "Digital Trends",
+        "url": "https://www.digitaltrends.com/feed/"
+      },
+      {
+        "name": "Edmunds",
+        "url": "https://www.edmunds.com/about/rss/news.xml"
+      },
+      {
+        "name": "Forbes",
+        "url": "https://www.forbes.com/innovation/feed2/"
+      },
+      {
+        "name": "Gear Patrol",
+        "url": "https://www.gearpatrol.com/feed/"
+      },
+      {
+        "name": "GQ",
+        "url": "https://www.gq.com/feed/rss"
+      },
+      {
+        "name": "Green Car Reports",
+        "url": "https://www.greencarreports.com/rss/news"
+      },
+      {
+        "name": "Huffington Post",
+        "url": "https://www.huffpost.com/section/front-page/feed"
+      },
+      {
+        "name": "Indianapolis Star",
+        "url": "https://rssfeeds.indystar.com/indianapolis-news"
+      },
+      {
+        "name": "Jalopnik",
+        "url": "https://jalopnik.com/rss"
+      },
+      {
+        "name": "Kelley Blue Book",
+        "url": "https://www.kbb.com/rss/all/"
+      },
+      {
+        "name": "Los Angeles Times",
+        "url": "https://www.latimes.com/local/rss2.0.xml"
+      },
+      {
+        "name": "Men’s Health",
+        "url": "https://www.menshealth.com/rss/all.xml/"
+      },
+      {
+        "name": "Motor Authority",
+        "url": "https://www.motorauthority.com/rss/news"
+      },
+      {
+        "name": "Motor Trend",
+        "url": "https://www.motortrend.com/feed/"
+      },
+      {
+        "name": "Motor1",
+        "url": "https://www.motor1.com/rss/articles/all/"
+      },
+      {
+        "name": "New York Daily News",
+        "url": "https://www.nydailynews.com/arc/outboundfeeds/rss/?outputType=xml"
+      },
+      {
+        "name": "New York Post",
+        "url": "https://nypost.com/news/feed/"
+      },
+      {
+        "name": "New York Times (Autos)",
+        "url": "https://rss.nytimes.com/services/xml/rss/nyt/Automobiles.xml"
+      },
+      {
+        "name": "Newsweek",
+        "url": "https://www.newsweek.com/rss/catch-all"
+      },
+      {
+        "name": "Philadelphia Inquirer",
+        "url": "https://www.inquirer.com/arc/outboundfeeds/rss/?outputType=xml"
+      },
+      {
+        "name": "Pickup Truck +SUV Talk",
+        "url": "https://pickuptrucksuvtalk.com/feed/"
+      },
+      {
+        "name": "Reuters",
+        "url": "https://feeds.reuters.com/reuters/topNews"
+      },
+      {
+        "name": "Road & Track",
+        "url": "https://www.roadandtrack.com/rss/all.xml/"
+      },
+      {
+        "name": "SlashGear",
+        "url": "https://www.slashgear.com/feed/"
+      },
+      {
+        "name": "TFLCar",
+        "url": "https://tflcar.com/feed/"
+      },
+      {
+        "name": "The Auto Channel",
+        "url": "https://www.theautochannel.com/news/feed/"
+      },
+      {
+        "name": "The Car Connection",
+        "url": "https://www.thecarconnection.com/rss/news"
+      },
+      {
+        "name": "The Drive",
+        "url": "https://www.thedrive.com/feed"
+      },
+      {
+        "name": "The Verge",
+        "url": "https://www.theverge.com/rss/index.xml"
+      },
+      {
+        "name": "Time",
+        "url": "https://time.com/feed/"
+      },
+      {
+        "name": "TopSpeed",
+        "url": "https://www.topspeed.com/feed"
+      },
+      {
+        "name": "Torque News",
+        "url": "https://www.torquenews.com/rss.xml"
+      },
+      {
+        "name": "U.S. News & World Report",
+        "url": "https://www.usnews.com/rss/articles"
+      },
+      {
+        "name": "USA Today",
+        "url": "https://www.usatoday.com/rss/news/"
+      },
+      {
+        "name": "Ward’s Auto World",
+        "url": "https://www.wardsauto.com/rss.xml"
+      }
+    ]
+  },
+  "Trane": {
+    "name": "Trane",
+    "keywords": [
+      "Trane Technologies",
+      "Trane",
+      "Carrier Global",
+      "Johnson Controls",
+      "Daikin",
+      "Lennox International",
+      "METUS"
+    ],
+    "feeds": [
+      {
+        "name": "ABC News",
+        "url": "https://abcnews.go.com/abcnews/topstories"
+      },
+      {
+        "name": "ACHR News",
+        "url": "https://www.achrnews.com/rss/topic/2649-news"
+      },
+      {
+        "name": "ASSEMBLY Magazine",
+        "url": "https://www.assemblymag.com/rss/topic/2640-news"
+      },
+      {
+        "name": "Associated Press",
+        "url": "https://news.google.com/rss/search?q=%22Associated+Press%22+%28AP%29&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "BBC",
+        "url": "https://feeds.bbci.co.uk/news/rss.xml"
+      },
+      {
+        "name": "Better Buildings Solution Center",
+        "url": "https://betterbuildingssolutioncenter.energy.gov/rss.xml"
+      },
+      {
+        "name": "CBS News",
+        "url": "https://www.cbsnews.com/latest/rss/main"
+      },
+      {
+        "name": "CleanTechnica",
+        "url": "https://cleantechnica.com/feed/"
+      },
+      {
+        "name": "CNBC",
+        "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html"
+      },
+      {
+        "name": "CNBC Sustainability",
+        "url": "https://www.cnbc.com/id/48747561/device/rss/rss.html"
+      },
+      {
+        "name": "Cooling Post",
+        "url": "https://www.coolingpost.com/feed/"
+      },
+      {
+        "name": "Energy Central",
+        "url": "https://energycentral.com/feed"
+      },
+      {
+        "name": "Environment+Energy Leader",
+        "url": "https://www.environmentenergyleader.com/feed/"
+      },
+      {
+        "name": "Evoprom News",
+        "url": "https://www.evoprom.com/feed"
+      },
+      {
+        "name": "Fast Company",
+        "url": "https://www.fastcompany.com/latest/rss"
+      },
+      {
+        "name": "Forbes",
+        "url": "https://www.forbes.com/innovation/feed2/"
+      },
+      {
+        "name": "Fortune",
+        "url": "https://fortune.com/feed/"
+      },
+      {
+        "name": "HPAC Engineering",
+        "url": "https://www.hpac.com/rss.xml"
+      },
+      {
+        "name": "Inside Climate News",
+        "url": "https://insideclimatenews.org/feed/"
+      },
+      {
+        "name": "Men's Journal",
+        "url": "https://www.mensjournal.com/feed"
+      },
+      {
+        "name": "NBC News",
+        "url": "https://feeds.nbcnews.com/nbcnews/public/news"
+      },
+      {
+        "name": "Reuters",
+        "url": "https://feeds.reuters.com/reuters/topNews"
+      },
+      {
+        "name": "Taxpayer Advocate Service",
+        "url": "https://www.taxpayeradvocate.irs.gov/news-blog/feed/"
+      },
+      {
+        "name": "The Hill",
+        "url": "https://thehill.com/rss/syndicator/19110"
+      },
+      {
+        "name": "This is Money",
+        "url": "https://www.thisismoney.co.uk/money/index.rss"
+      },
+      {
+        "name": "Trellis",
+        "url": "https://trellis.net/feed/"
+      },
+      {
+        "name": "Wired",
+        "url": "https://www.wired.com/feed/rss"
+      },
+      {
+        "name": "World Pumps",
+        "url": "https://www.worldpumps.com/rss/all-news"
+      }
+    ]
+  },
+  "BeOne": {
+    "name": "BeOne",
+    "keywords": [
+      "BeOne",
+      "BeiGene",
+      "Brukinsa",
+      "Zanubrutinib",
+      "Tevimbra",
+      "Tislelizumab",
+      "Cancer",
+      "Drug"
+    ],
+    "feeds": [
+      {
+        "name": "Axios",
+        "url": "https://www.axios.com/feeds/feed.rss"
+      },
+      {
+        "name": "BioPharma Dive",
+        "url": "https://www.biopharmadive.com/feeds/news.rss"
+      },
+      {
+        "name": "BioSpace",
+        "url": "https://www.biospace.com/feeds/news/"
+      },
+      {
+        "name": "BioXconomy",
+        "url": "https://news.google.com/rss/search?q=%22BioXconomy%22&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "Cancer Network",
+        "url": "https://www.cancernetwork.com/rss/all"
+      },
+      {
+        "name": "Cancer Therapy Advisor",
+        "url": "https://news.google.com/rss/search?q=site%3Acancertherapyadvisor.com&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "CancerConnect",
+        "url": "https://cancerconnect.com/feed/"
+      },
+      {
+        "name": "CLL Society",
+        "url": "https://cllsociety.org/feed/"
+      },
+      {
+        "name": "CNBC",
+        "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html"
+      },
+      {
+        "name": "Cure Today",
+        "url": "https://www.curetoday.com/rss/news"
+      },
+      {
+        "name": "Fast Company",
+        "url": "https://www.fastcompany.com/latest/rss"
+      },
+      {
+        "name": "FierceBiotech",
+        "url": "https://www.fiercebiotech.com/rss/headlines.xml"
+      },
+      {
+        "name": "FiercePharma",
+        "url": "https://www.fiercepharma.com/rss/headlines.xml"
+      },
+      {
+        "name": "Forbes",
+        "url": "https://www.forbes.com/innovation/feed2/"
+      },
+      {
+        "name": "Fortune",
+        "url": "https://fortune.com/feed/"
+      },
+      {
+        "name": "MedCity News",
+        "url": "https://medcitynews.com/feed/"
+      },
+      {
+        "name": "Medscape",
+        "url": "https://www.medscape.com/cx/rssfeeds/2700.xml"
+      },
+      {
+        "name": "OncLive",
+        "url": "https://www.onclive.com/rss/news"
+      },
+      {
+        "name": "Oncology News Central",
+        "url": "https://news.google.com/rss/search?q=site%3Aoncologynewscentral.com&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "Onco'Zine",
+        "url": "https://oncozine.com/feed/"
+      },
+      {
+        "name": "PMLiVE",
+        "url": "https://news.google.com/rss/search?q=%22PMLiVE%22+pharma&hl=en-GB&gl=GB&ceid=GB:en"
+      },
+      {
+        "name": "Reuters",
+        "url": "https://feeds.reuters.com/reuters/topNews"
+      },
+      {
+        "name": "Targeted Oncology",
+        "url": "https://news.google.com/rss/search?q=site%3Atargetedonc.com&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "The ASCO Post",
+        "url": "https://ascopost.com/rss/"
+      },
+      {
+        "name": "The Motley Fool",
+        "url": "https://www.fool.com/feeds/rss/latest-articles.aspx"
+      }
+    ]
+  },
+  "Amgen": {
+    "name": "Amgen",
+    "keywords": [
+      "Gout",
+      "Thyroid eye",
+      "Sjögren's",
+      "Tepezza",
+      "Krystexxa",
+      "pegloticase",
+      "Teprotumumab",
+      "Amgen"
+    ],
+    "feeds": [
+      {
+        "name": "2 Minute Medicine",
+        "url": "https://www.2minutemedicine.com/feed/"
+      },
+      {
+        "name": "ABC News",
+        "url": "https://abcnews.go.com/abcnews/topstories"
+      },
+      {
+        "name": "American Medical Association",
+        "url": "https://www.ama-assn.org/rss-feeds/news.xml"
+      },
+      {
+        "name": "ARC Advisory Group",
+        "url": "https://www.arcweb.com/blog/feed"
+      },
+      {
+        "name": "Benzinga",
+        "url": "https://www.benzinga.com/feed"
+      },
+      {
+        "name": "BioPharm International",
+        "url": "https://www.biopharminternational.com/rss"
+      },
+      {
+        "name": "BioPharma-Reporter",
+        "url": "https://www.biopharma-reporter.com/Info/Feeds-Sitemaps-Hubs/RSS-Feed"
+      },
+      {
+        "name": "BioProcess International",
+        "url": "https://www.bioprocessintl.com/feed"
+      },
+      {
+        "name": "BioSpace",
+        "url": "https://www.biospace.com/feeds/news/"
+      },
+      {
+        "name": "Biotechnology Innovation Organization",
+        "url": "https://www.bio.org/rss.xml"
+      },
+      {
+        "name": "CBS News",
+        "url": "https://www.cbsnews.com/latest/rss/main"
+      },
+      {
+        "name": "CNBC",
+        "url": "https://www.cnbc.com/id/100003114/device/rss/rss.html"
+      },
+      {
+        "name": "CNN",
+        "url": "http://rss.cnn.com/rss/cnn_topstories.rss"
+      },
+      {
+        "name": "Contagion Live",
+        "url": "https://www.contagionlive.com/rss"
+      },
+      {
+        "name": "Contemporary Pediatrics",
+        "url": "https://www.contemporarypediatrics.com/rss"
+      },
+      {
+        "name": "Drug Topics",
+        "url": "https://www.drugtopics.com/rss"
+      },
+      {
+        "name": "Evaluate Vantage",
+        "url": "https://www.evaluate.com/vantage/rss"
+      },
+      {
+        "name": "Everyday Health",
+        "url": "https://www.everydayhealth.com/rss/news.aspx"
+      },
+      {
+        "name": "FierceBiotech",
+        "url": "https://www.fiercebiotech.com/rss/headlines.xml"
+      },
+      {
+        "name": "FiercePharma",
+        "url": "https://www.fiercepharma.com/rss/headlines.xml"
+      },
+      {
+        "name": "Forbes",
+        "url": "https://www.forbes.com/innovation/feed2/"
+      },
+      {
+        "name": "FOX News",
+        "url": "https://moxie.foxnews.com/google-publisher/latest.xml"
+      },
+      {
+        "name": "GeneOnline",
+        "url": "https://www.geneonline.com/feed/"
+      },
+      {
+        "name": "Genetic Engineering & Biotechnology News",
+        "url": "https://www.genengnews.com/feed/"
+      },
+      {
+        "name": "GenomeWeb",
+        "url": "https://www.genomeweb.com/rss.xml"
+      },
+      {
+        "name": "HCPLive",
+        "url": "https://www.hcplive.com/rss"
+      },
+      {
+        "name": "Healio",
+        "url": "https://www.healio.com/rss/news"
+      },
+      {
+        "name": "Healthcare Dive",
+        "url": "https://www.healthcaredive.com/feeds/news/"
+      },
+      {
+        "name": "HealthDay News",
+        "url": "https://www.healthday.com/rss"
+      },
+      {
+        "name": "Healthline",
+        "url": "https://www.healthline.com/rss/health-news"
+      },
+      {
+        "name": "HealthNews",
+        "url": "https://healthnews.com/feed/"
+      },
+      {
+        "name": "Hematology Advisor",
+        "url": "https://www.hematologyadvisor.com/feed/"
+      },
+      {
+        "name": "Liver Disease News",
+        "url": "https://liverdiseasenews.com/feed/"
+      },
+      {
+        "name": "MedCity News",
+        "url": "https://medcitynews.com/feed/"
+      },
+      {
+        "name": "Medical Daily",
+        "url": "https://www.medicaldaily.com/rss"
+      },
+      {
+        "name": "Medical Xpress",
+        "url": "https://medicalxpress.com/rss-feed/"
+      },
+      {
+        "name": "MedPage Today",
+        "url": "https://www.medpagetoday.com/rss/headlines.xml"
+      },
+      {
+        "name": "Medscape",
+        "url": "https://www.medscape.com/cx/rssfeeds/2700.xml"
+      },
+      {
+        "name": "MedTruth",
+        "url": "https://www.medtruth.com/feed"
+      },
+      {
+        "name": "NBC News",
+        "url": "https://feeds.nbcnews.com/nbcnews/public/news"
+      },
+      {
+        "name": "NEJM Journal Watch",
+        "url": "https://www.jwatch.org/rss"
+      },
+      {
+        "name": "News Medical",
+        "url": "https://www.news-medical.net/rss/news.aspx"
+      },
+      {
+        "name": "NPR",
+        "url": "https://feeds.npr.org/1001/rss.xml"
+      },
+      {
+        "name": "OncLive",
+        "url": "https://www.onclive.com/rss/news"
+      },
+      {
+        "name": "Pharmaceutical Technology",
+        "url": "https://www.pharmaceutical-technology.com/feed/"
+      },
+      {
+        "name": "Pharmacy Times",
+        "url": "https://news.google.com/rss/search?q=site%3Apharmacytimes.com&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "PharmaNewsIntelligence",
+        "url": "https://pharmanewsintel.com/feed/"
+      },
+      {
+        "name": "Pulmonology Advisor",
+        "url": "https://www.pulmonologyadvisor.com/feed/"
+      },
+      {
+        "name": "Renal & Urology News",
+        "url": "https://www.renalandurologynews.com/feed/"
+      },
+      {
+        "name": "Reuters",
+        "url": "https://feeds.reuters.com/reuters/topNews"
+      },
+      {
+        "name": "Science Blog",
+        "url": "https://scienceblog.com/feed/"
+      },
+      {
+        "name": "Scientific American",
+        "url": "https://rss.sciam.com/ScientificAmerican-Global"
+      },
+      {
+        "name": "SciTechDaily",
+        "url": "https://scitechdaily.com/feed/"
+      },
+      {
+        "name": "Associated Press",
+        "url": "https://news.google.com/rss/search?q=%22Associated+Press%22+%28AP%29&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "The Hill",
+        "url": "https://thehill.com/rss/syndicator/19110"
+      },
+      {
+        "name": "U.S. News & World Report",
+        "url": "https://www.usnews.com/rss/articles"
+      },
+      {
+        "name": "USA Today",
+        "url": "https://www.usatoday.com/rss/news/"
+      },
+      {
+        "name": "Verywell Health",
+        "url": "https://www.verywellhealth.com/feed"
+      },
+      {
+        "name": "WebMD",
+        "url": "https://rssfeeds.webmd.com/rss/rss.aspx?RSSSource=RSS_PUBLIC"
+      }
+    ]
+  },
+  "Otsuka": {
+    "name": "Otsuka",
+    "keywords": [
+      "Otsuka",
+      "Rexulti",
+      "brexpiprazole",
+      "drug pricing",
+      "drug prices",
+      "drug price",
+      "IRA",
+      "Inflation Reduction Act",
+      "drug cost",
+      "drug costs",
+      "Medicare",
+      "Medicaid",
+      "price negotiations",
+      "price negotiation",
+      "most-favored nation",
+      "most favored nation",
+      "most-favored-nation",
+      "TrumpRx",
+      "340B"
+    ],
+    "feeds": [
+      {
+        "name": "ABC News",
+        "url": "https://abcnews.go.com/abcnews/topstories"
+      },
+      {
+        "name": "AJMC (American Journal of Managed Care)",
+        "url": "https://news.google.com/rss/search?q=site%3Aajmc.com+managed+care&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "Associated Press",
+        "url": "https://news.google.com/rss/search?q=%22Associated+Press%22+%28AP%29&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "Axios",
+        "url": "https://www.axios.com/feeds/feed.rss"
+      },
+      {
+        "name": "Barron's",
+        "url": "https://news.google.com/rss/search?q=%22Barron%27s%22+pharma+drug+pricing&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "Becker's Hospital Review",
+        "url": "https://www.beckershospitalreview.com/rss/feed.xml"
+      },
+      {
+        "name": "BenefitsPRO",
+        "url": "https://news.google.com/rss/search?q=%22BenefitsPRO%22+benefits+healthcare&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "BioSpace",
+        "url": "https://www.biospace.com/feeds/news/"
+      },
+      {
+        "name": "Business Insider",
+        "url": "https://www.businessinsider.com/rss"
+      },
+      {
+        "name": "Business Wire",
+        "url": "https://www.businesswire.com/rss/home/?rss=G1"
+      },
+      {
+        "name": "CBS News",
+        "url": "https://www.cbsnews.com/latest/rss/main"
+      },
+      {
+        "name": "Center for Economic and Policy Research (CEPR)",
+        "url": "https://cepr.net/feed/"
+      },
+      {
+        "name": "CMS.gov (Centers for Medicare & Medicaid Services)",
+        "url": "https://www.cms.gov/rss/news.rss"
+      },
+      {
+        "name": "CNN",
+        "url": "http://rss.cnn.com/rss/cnn_topstories.rss"
+      },
+      {
+        "name": "Drug Discovery World",
+        "url": "https://www.ddw-online.com/feed/"
+      },
+      {
+        "name": "Fierce Healthcare",
+        "url": "https://www.fiercehealthcare.com/rss/headlines.xml"
+      },
+      {
+        "name": "FierceBiotech",
+        "url": "https://www.fiercebiotech.com/rss/headlines.xml"
+      },
+      {
+        "name": "FiercePharma",
+        "url": "https://www.fiercepharma.com/rss/headlines.xml"
+      },
+      {
+        "name": "Forbes",
+        "url": "https://www.forbes.com/innovation/feed2/"
+      },
+      {
+        "name": "Fortune",
+        "url": "https://fortune.com/feed/"
+      },
+      {
+        "name": "FOX News",
+        "url": "https://moxie.foxnews.com/google-publisher/latest.xml"
+      },
+      {
+        "name": "GlobeNewswire",
+        "url": "https://www.globenewswire.com/RssFeed/subjectcode/15-Pharmaceuticals"
+      },
+      {
+        "name": "Health Affairs",
+        "url": "https://www.healthaffairs.org/rss/site_1/1.xml"
+      },
+      {
+        "name": "JAMA Network",
+        "url": "https://jamanetwork.com/rss/site_3/67.xml"
+      },
+      {
+        "name": "Managed Healthcare Executive",
+        "url": "https://news.google.com/rss/search?q=site%3Amanagedhealthcareexecutive.com&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "MedCity News",
+        "url": "https://medcitynews.com/feed/"
+      },
+      {
+        "name": "Medical Economics",
+        "url": "https://news.google.com/rss/search?q=site%3Amedicaleconomics.com&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "MM+M (Medical Marketing & Media)",
+        "url": "https://news.google.com/rss/search?q=site%3Ammm-online.com+%22MM%2BM%22&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "NBC News",
+        "url": "https://feeds.nbcnews.com/nbcnews/public/news"
+      },
+      {
+        "name": "New York Post",
+        "url": "https://nypost.com/news/feed/"
+      },
+      {
+        "name": "News Nation",
+        "url": "https://www.newsnationnow.com/feed/"
+      },
+      {
+        "name": "Newsweek",
+        "url": "https://www.newsweek.com/rss/catch-all"
+      },
+      {
+        "name": "NPR",
+        "url": "https://feeds.npr.org/1001/rss.xml"
+      },
+      {
+        "name": "PharmaPhorum",
+        "url": "https://pharmaphorum.com/category/news/feed/"
+      },
+      {
+        "name": "Pharmaceutical Executive (PharmExec)",
+        "url": "https://www.pharmexec.com/rss/articles"
+      },
+      {
+        "name": "Pharmaceutical Technology",
+        "url": "https://www.pharmaceutical-technology.com/feed/"
+      },
+      {
+        "name": "Pharmacy Times",
+        "url": "https://news.google.com/rss/search?q=site%3Apharmacytimes.com&hl=en-US&gl=US&ceid=US:en"
+      },
+      {
+        "name": "POLITICO",
+        "url": "https://rss.politico.com/healthcare.xml"
+      },
+      {
+        "name": "PR Newswire",
+        "url": "https://www.prnewswire.com/rss/news-releases-list.rss"
+      },
+      {
+        "name": "Reuters",
+        "url": "https://feeds.reuters.com/reuters/topNews"
+      },
+      {
+        "name": "The Blaze",
+        "url": "https://www.theblaze.com/feeds/feed.rss"
+      },
+      {
+        "name": "The Daily Wire",
+        "url": "https://www.dailywire.com/feeds/rss.xml"
+      },
+      {
+        "name": "The Guardian",
+        "url": "https://www.theguardian.com/uk/rss"
+      },
+      {
+        "name": "The Hill",
+        "url": "https://thehill.com/rss/syndicator/19110"
+      },
+      {
+        "name": "The Independent",
+        "url": "https://www.independent.co.uk/rss"
+      },
+      {
+        "name": "USA Today",
+        "url": "https://www.usatoday.com/rss/news/"
+      },
+      {
+        "name": "Washington Examiner",
+        "url": "https://www.washingtonexaminer.com/feed"
+      },
+      {
+        "name": "Washington Reporter",
+        "url": "https://news.google.com/rss/search?q=%22Washington+Reporter%22&hl=en-US&gl=US&ceid=US:en"
+      }
+    ]
+  },
+  "Indivior": {
+    "name": "Indivior",
+    "keywords": [
+      "Doctor",
+      "Nurse",
+      "Pharmacist",
+      "Physician",
+      "Psychiatrist",
+      "Practitioner",
+      "anesthesiologist",
+      "surgeon",
+      "Indivior"
+    ],
+    "feeds": [
+      {
+        "name": "DOJ – Office of Public Affairs",
+        "url": "https://www.justice.gov/feeds/opa/justice-news.xml"
+      },
+      {
+        "name": "DOJ Criminal Division – Health Care Fraud Unit",
+        "url": "https://www.justice.gov/feeds/criminal/criminal-press-releases.xml"
+      },
+      {
+        "name": "DEA – Diversion Control Division",
+        "url": "https://www.dea.gov/rss.xml"
+      },
+      {
+        "name": "HHS Office of Inspector General – Enforcement",
+        "url": "https://oig.hhs.gov/news/rss.xml"
+      },
+      {
+        "name": "FDA – Office of Criminal Investigations",
+        "url": "https://www.fda.gov/about-fda/office-criminal-investigations/rss.xml"
+      },
+      {
+        "name": "FDA News & Press Announcements",
+        "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml"
+      },
+      {
+        "name": "California AG (Rob Bonta)",
+        "url": "https://oag.ca.gov/rss/news"
+      },
+      {
+        "name": "New York AG (Letitia James)",
+        "url": "https://ag.ny.gov/rss-feed"
+      },
+      {
+        "name": "Texas AG (Ken Paxton)",
+        "url": "https://www.texasattorneygeneral.gov/rss.xml"
+      },
+      {
+        "name": "Florida AG (James Uthmeier)",
+        "url": "https://www.myfloridalegal.com/rss/news.xml"
+      },
+      {
+        "name": "Illinois AG (Kwame Raoul)",
+        "url": "https://illinoisattorneygeneral.gov/rss/press.xml"
+      },
+      {
+        "name": "Pennsylvania AG (Dave Sunday)",
+        "url": "https://www.attorneygeneral.gov/feed/"
+      },
+      {
+        "name": "Michigan AG (Dana Nessel)",
+        "url": "https://www.michigan.gov/ag/0,4534,7-359--RSS,00.xml"
+      },
+      {
+        "name": "Massachusetts AG (Andrea Campbell)",
+        "url": "https://www.mass.gov/feed/press-releases.xml"
+      },
+      {
+        "name": "Washington AG (Nick Brown)",
+        "url": "https://www.atg.wa.gov/news/feed"
+      },
+      {
+        "name": "FiercePharma",
+        "url": "https://www.fiercepharma.com/rss/headlines.xml"
+      },
+      {
+        "name": "FierceBiotech",
+        "url": "https://www.fiercebiotech.com/rss/headlines.xml"
+      },
+      {
+        "name": "BioPharma Dive",
+        "url": "https://www.biopharmadive.com/feeds/news.rss"
+      },
+      {
+        "name": "BioSpace",
+        "url": "https://www.biospace.com/feeds/news/"
+      },
+      {
+        "name": "Reuters",
+        "url": "https://feeds.reuters.com/reuters/topNews"
+      },
+      {
+        "name": "Reuters Health",
+        "url": "https://feeds.reuters.com/reuters/healthNews"
+      },
+      {
+        "name": "Associated Press",
+        "url": "https://news.google.com/rss/search?q=%22Associated+Press%22+%28AP%29&hl=en-US&gl=US&ceid=US:en"
+      }
+    ]
+  }
+}
