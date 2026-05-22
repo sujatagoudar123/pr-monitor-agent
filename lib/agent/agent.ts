@@ -228,19 +228,72 @@ async function rankArticles(
 ): Promise<RankedArticle[]> {
   if (articles.length === 0) return [];
 
-  const BATCH_SIZE = 25; // keep prompts small for cost + reliability
+  // ---- PRE-FILTER ----
+  // Don't send 1,600+ articles to the LLM. Cheap keyword screen first:
+  // keep only articles whose title or snippet mentions ANY keyword OR the
+  // company name. This cuts the ranking workload by ~10x without sacrificing
+  // recall (because the multi-source agent loop already covers breadth).
+  const companyLower = company.name.toLowerCase();
+  const keywordLower = company.keywords.map((k) => k.toLowerCase());
+  const candidates = articles.filter((a) => {
+    const text = (a.title + ' ' + a.snippet).toLowerCase();
+    if (text.includes(companyLower)) return true;
+    return keywordLower.some((k) => text.includes(k));
+  });
+
+  // Hard cap so a worst-case run is still bounded
+  const MAX_TO_RANK = 400;
+  const toRank = candidates.slice(0, MAX_TO_RANK);
+
+  const BATCH_SIZE = 25;
+  const batches: RawArticle[][] = [];
+  for (let i = 0; i < toRank.length; i += BATCH_SIZE) {
+    batches.push(toRank.slice(i, i + BATCH_SIZE));
+  }
+
+  // ---- PARALLEL BATCH PROCESSING ----
+  // Anthropic free/standard tier allows multiple concurrent requests.
+  // Run 6 batches at a time so 60 batches finish in ~10 LLM round-trips
+  // instead of 60 sequential ones.
+  const PARALLEL = 6;
   const ranked: RankedArticle[] = [];
 
-  for (let i = 0; i < articles.length; i += BATCH_SIZE) {
-    const batch = articles.slice(i, i + BATCH_SIZE);
-    const numbered = batch
-      .map(
-        (a, idx) =>
-          `[${idx}] SOURCE: ${a.source}\nTITLE: ${a.title}\nSNIPPET: ${a.snippet || '(none)'}`,
-      )
-      .join('\n\n');
+  for (let i = 0; i < batches.length; i += PARALLEL) {
+    const group = batches.slice(i, i + PARALLEL);
+    const results = await Promise.all(
+      group.map((batch, gi) => rankBatch(client, model, company, batch, i + gi)),
+    );
+    results.forEach((arr) => ranked.push(...arr));
+  }
 
-    const prompt = `You are evaluating news articles for a PR-monitoring brief about ${company.name}.
+  ranked.sort((a, b) => {
+    if (Math.abs(a.relevanceScore - b.relevanceScore) > 0.05)
+      return b.relevanceScore - a.relevanceScore;
+    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+  });
+
+  return ranked;
+}
+
+/**
+ * Rank a single batch of ~25 articles. Robust against the model returning
+ * extra text before/after the JSON array.
+ */
+async function rankBatch(
+  client: Anthropic,
+  model: string,
+  company: Company,
+  batch: RawArticle[],
+  batchIndex: number,
+): Promise<RankedArticle[]> {
+  const numbered = batch
+    .map(
+      (a, idx) =>
+        `[${idx}] SOURCE: ${a.source}\nTITLE: ${a.title}\nSNIPPET: ${a.snippet || '(none)'}`,
+    )
+    .join('\n\n');
+
+  const prompt = `You are evaluating news articles for a PR-monitoring brief about ${company.name}.
 
 Keywords client cares about: ${company.keywords.join(', ')}
 
@@ -249,74 +302,128 @@ For EACH article below, decide:
 - matchedKeywords: which keywords from the list actually appear or are clearly referenced
 - whyPicked: one short sentence explaining why this matters for ${company.name} (or why it's borderline)
 
-Reject articles where the keyword match is incidental (e.g., a high school named "GSK", an unrelated "vaccine" article that doesn't involve GSK products, etc.).
+Reject articles where the keyword match is incidental (e.g., a high school named "${company.name}", an unrelated article that doesn't involve ${company.name} products, etc.).
 
-Return ONLY a JSON array. No prose, no markdown fences. Format:
-[{"index": 0, "relevance": 0.95, "matchedKeywords": ["GSK","Vaccine"], "whyPicked": "Reports on GSK's Q3 vaccine revenue."}, ...]
+CRITICAL: Reply with the JSON array ONLY. No preamble, no markdown, no commentary.
+Format: [{"index":0,"relevance":0.95,"matchedKeywords":["..."],"whyPicked":"..."}]
 
 Articles:
 ${numbered}`;
 
-    try {
-      const response = await client.messages.create({
-        model,
-        max_tokens: 4096,
-        messages: [{ role: 'user', content: prompt }],
+  try {
+    const response = await client.messages.create({
+      model,
+      max_tokens: 4096,
+      messages: [{ role: 'user', content: prompt }],
+    });
+
+    const textBlock = response.content.find((c) => c.type === 'text') as
+      | Anthropic.Messages.TextBlock
+      | undefined;
+    if (!textBlock) return fallbackRank(batch, company);
+
+    const scored = extractJsonArray(textBlock.text);
+    if (!scored) {
+      console.warn(`[rank] batch ${batchIndex}: could not extract JSON, using fallback`);
+      return fallbackRank(batch, company);
+    }
+
+    const out: RankedArticle[] = [];
+    for (const s of scored) {
+      const a = batch[s.index];
+      if (!a) continue;
+      if (typeof s.relevance !== 'number' || s.relevance < 0.5) continue;
+      out.push({
+        ...a,
+        relevanceScore: s.relevance,
+        matchedKeywords: Array.isArray(s.matchedKeywords) ? s.matchedKeywords : [],
+        whyPicked: s.whyPicked || `Mentions ${company.name}.`,
       });
+    }
+    return out;
+  } catch (err) {
+    console.warn(`[rank] batch ${batchIndex} threw, using fallback:`, err);
+    return fallbackRank(batch, company);
+  }
+}
 
-      const textBlock = response.content.find((c) => c.type === 'text') as
-        | Anthropic.Messages.TextBlock
-        | undefined;
-      if (!textBlock) continue;
+interface ScoredItem {
+  index: number;
+  relevance: number;
+  matchedKeywords: string[];
+  whyPicked: string;
+}
 
-      // Strip code fences if model adds them despite instruction
-      let jsonText = textBlock.text.trim();
-      jsonText = jsonText.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '');
+/**
+ * Robustly extract a JSON array from a model response that may include
+ * preamble ("Here is the analysis:"), markdown fences, or trailing commentary.
+ * Returns null if no valid array can be parsed.
+ */
+function extractJsonArray(text: string): ScoredItem[] | null {
+  if (!text) return null;
+  let s = text.trim();
 
-      const scored: Array<{
-        index: number;
-        relevance: number;
-        matchedKeywords: string[];
-        whyPicked: string;
-      }> = JSON.parse(jsonText);
+  // Strip markdown code fences (```json ... ``` or ``` ... ```)
+  s = s.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '');
 
-      for (const s of scored) {
-        const a = batch[s.index];
-        if (!a) continue;
-        if (s.relevance < 0.5) continue; // drop low-relevance
-        ranked.push({
-          ...a,
-          relevanceScore: s.relevance,
-          matchedKeywords: s.matchedKeywords || [],
-          whyPicked: s.whyPicked || `Mentions ${company.name}.`,
-        });
-      }
-    } catch (err) {
-      console.warn(`[rank] batch ${i} failed, keeping raw articles:`, err);
-      // Fallback: keep articles with a simple keyword match
-      for (const a of batch) {
-        const matched = company.keywords.filter((k) =>
-          (a.title + ' ' + a.snippet).toLowerCase().includes(k.toLowerCase()),
-        );
-        if (matched.length === 0) continue;
-        ranked.push({
-          ...a,
-          relevanceScore: 0.6,
-          matchedKeywords: matched,
-          whyPicked: `Matched keywords: ${matched.join(', ')}.`,
-        });
-      }
+  // Fast path: clean JSON array
+  if (s.startsWith('[')) {
+    try {
+      return JSON.parse(s);
+    } catch {
+      // fall through to bracket-extraction
     }
   }
 
-  // Sort by relevance desc, then date desc
-  ranked.sort((a, b) => {
-    if (Math.abs(a.relevanceScore - b.relevanceScore) > 0.05)
-      return b.relevanceScore - a.relevanceScore;
-    return new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
-  });
+  // Find the first `[` and the matching closing `]` by counting depth.
+  // This handles cases like: "Here is the analysis: [...the array...] Hope this helps!"
+  const start = s.indexOf('[');
+  if (start === -1) return null;
+  let depth = 0;
+  let inString = false;
+  let escape = false;
+  for (let i = start; i < s.length; i++) {
+    const ch = s[i];
+    if (escape) { escape = false; continue; }
+    if (ch === '\\') { escape = true; continue; }
+    if (ch === '"') { inString = !inString; continue; }
+    if (inString) continue;
+    if (ch === '[') depth++;
+    else if (ch === ']') {
+      depth--;
+      if (depth === 0) {
+        const candidate = s.slice(start, i + 1);
+        try {
+          return JSON.parse(candidate);
+        } catch {
+          return null;
+        }
+      }
+    }
+  }
+  return null;
+}
 
-  return ranked;
+/**
+ * Fallback when LLM ranking fails: keep articles whose title or snippet
+ * contains a keyword, with a moderate 0.6 score.
+ */
+function fallbackRank(batch: RawArticle[], company: Company): RankedArticle[] {
+  const out: RankedArticle[] = [];
+  for (const a of batch) {
+    const text = (a.title + ' ' + a.snippet).toLowerCase();
+    const matched = company.keywords.filter((k) =>
+      text.includes(k.toLowerCase()),
+    );
+    if (matched.length === 0) continue;
+    out.push({
+      ...a,
+      relevanceScore: 0.6,
+      matchedKeywords: matched,
+      whyPicked: `Matched keywords: ${matched.join(', ')}.`,
+    });
+  }
+  return out;
 }
 
 // ----------------------------------------------------------------------------
