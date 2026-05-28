@@ -1,4 +1,4 @@
-# PR Monitor Agent v2 — Actually Agentic
+# PR Monitor Agent v2 — Actually Agentic.
 
 A production-ready, Claude-powered PR-monitoring agent that gathers news articles about your monitored companies from **5 sources in parallel**, then uses an LLM to rank relevance and explain why each article matters.
 
